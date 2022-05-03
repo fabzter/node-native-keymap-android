@@ -21,7 +21,6 @@ typedef struct _XDisplay XDisplay;
 int pthread_cancel(pthread_t h) {
         return pthread_kill(h, 0);
 }
-...
 #endif /* __ANDROID__ */
 
 namespace {
