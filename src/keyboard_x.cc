@@ -15,6 +15,13 @@
 #include "../deps/chromium/macros.h"
 #include "../deps/chromium/x/keysym_to_unicode.h"
 
+#ifdef __ANDROID__
+int pthread_cancel(pthread_t h) {
+        return pthread_kill(h, 0);
+}
+...
+#endif /* __ANDROID__ */
+
 typedef struct _XDisplay XDisplay;
 
 namespace {
